@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="python_methods" type="library" format="ROBOT" generated="20201001 21:46:34">
+<version></version>
+<scope>global</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``python_methods``.</doc>
+<kw name="Click Accept Google Terms">
+<arguments>
+<arg>driver</arg>
+</arguments>
+<doc>@brief:     This method checks to see if a pop up box has appeared and if it has, it accepts it. If it hasn't it
+            returns a -1</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Find Specific Css Selector And Click">
+<arguments>
+<arg>driver</arg>
+<arg>css_selector</arg>
+</arguments>
+<doc>@brief:     This method finds the specific CSS selector and clicks it.</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Get Current Url">
+<arguments>
+<arg>driver</arg>
+</arguments>
+<doc>@brief:     This method gets the current url of the page and returns it</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Maximize Window">
+<arguments>
+<arg>driver</arg>
+</arguments>
+<doc>@brief:         This method just maximizes the window</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Read Css Selector">
+<arguments>
+<arg>driver</arg>
+<arg>css_selector</arg>
+</arguments>
+<doc>@brief:         This method reads the text that is stored in the css_selector</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Send Keys To Css Selector">
+<arguments>
+<arg>driver</arg>
+<arg>css_selector</arg>
+<arg>text</arg>
+</arguments>
+<doc>@brief:             This method sends keys to a selected css selector</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Setup Function">
+<arguments>
+</arguments>
+<doc>@brief:     Setups up the chrome driver
+            TO DO, if given more time i would pass the argument for where chromedriver.exe is stored</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Switch To Frame Via Number">
+<arguments>
+<arg>driver</arg>
+<arg>name_of_frame</arg>
+</arguments>
+<doc>@Brief:         This method switches the frame of the screen to the specified name
+                I haven't used a try and except</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Visit Website">
+<arguments>
+<arg>driver</arg>
+<arg>website_name</arg>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

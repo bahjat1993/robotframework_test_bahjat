@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="YesOrNoQuestion" type="library" format="ROBOT" generated="20201001 21:45:42">
+<version></version>
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>@brief This is a simple yes or not question using TK.
+Please pass the question as the argument when creating an instance.
+to find the answer please call obj.ans, this will be either Yes or No </doc>
+<init>
+<arguments>
+<arg>question=Enter question ples</arg>
+</arguments>
+<doc>Initialize self.  See help(type(self)) for accurate signature.</doc>
+<tags>
+</tags>
+</init>
+<kw name="Main Loop">
+<arguments>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Quit Application No">
+<arguments>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+<kw name="Quit Application Yes">
+<arguments>
+</arguments>
+<doc></doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

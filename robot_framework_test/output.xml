@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20201001 21:46:37.459" rpa="false">
+<suite id="s1" name="Main" source="C:\Users\212727274\Desktop\email_out\robot_framework_test\main.robot">
+<kw name="setup_driver" type="setup">
+<kw name="Setup Function" library="python_methods">
+<doc>@brief:     Setups up the chrome driver
+            TO DO, if given more time i would pass the argument for where chromedriver.exe is stored</doc>
+<assign>
+<var>${Driver}</var>
+</assign>
+<msg timestamp="20201001 21:47:11.780" level="INFO">${Driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="df1cf606fa792580b1e90d733ce153b7")&gt;</msg>
+<status status="PASS" starttime="20201001 21:46:38.103" endtime="20201001 21:47:11.780"></status>
+</kw>
+<kw name="Maximize Window" library="python_methods">
+<doc>@brief:         This method just maximizes the window</doc>
+<arguments>
+<arg>${Driver}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:11.781" endtime="20201001 21:47:11.894"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${Driver}</arg>
+</arguments>
+<msg timestamp="20201001 21:47:11.895" level="INFO">${Driver} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="df1cf606fa792580b1e90d733ce153b7")&gt;</msg>
+<status status="PASS" starttime="20201001 21:47:11.894" endtime="20201001 21:47:11.895"></status>
+</kw>
+<status status="PASS" starttime="20201001 21:46:38.103" endtime="20201001 21:47:11.895"></status>
+</kw>
+<test id="s1-t1" name="Open_chrome_and_website">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${Test_Case_ID}</var>
+</assign>
+<msg timestamp="20201001 21:47:11.896" level="INFO">${Test_Case_ID} = 1</msg>
+<status status="PASS" starttime="20201001 21:47:11.896" endtime="20201001 21:47:11.896"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Running Test Case ${Test_Case_ID}\n</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:11.896" endtime="20201001 21:47:11.897"></status>
+</kw>
+<kw name="Visit Website" library="python_methods">
+<arguments>
+<arg>${Driver}</arg>
+<arg>${Google_Website}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:11.897" endtime="20201001 21:47:13.283"></status>
+</kw>
+<kw name="Get Current Url" library="python_methods">
+<doc>@brief:     This method gets the current url of the page and returns it</doc>
+<arguments>
+<arg>${Driver}</arg>
+</arguments>
+<assign>
+<var>${Current_URL}</var>
+</assign>
+<msg timestamp="20201001 21:47:13.286" level="INFO">${Current_URL} = https://www.google.com/</msg>
+<status status="PASS" starttime="20201001 21:47:13.283" endtime="20201001 21:47:13.286"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${Current_URL}</arg>
+<arg>${Google_Website}</arg>
+<arg>msg=Failed Test Case ${Test_Case_ID}, the system failed to navigate to ${Google_Website}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:13.287" endtime="20201001 21:47:13.287"></status>
+</kw>
+<doc>30/09/2020 Bahjat Murrad
+This test case is testing to see that we can access the website</doc>
+<status status="PASS" starttime="20201001 21:47:11.895" endtime="20201001 21:47:13.287" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Accept_Cookies">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${Test_Case_ID}</var>
+</assign>
+<msg timestamp="20201001 21:47:13.289" level="INFO">${Test_Case_ID} = 2</msg>
+<status status="PASS" starttime="20201001 21:47:13.289" endtime="20201001 21:47:13.289"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20201001 21:47:18.290" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20201001 21:47:13.290" endtime="20201001 21:47:18.290"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Running Test Case ${Test_Case_ID}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.290" endtime="20201001 21:47:18.291"></status>
+</kw>
+<kw name="Click Accept Google Terms" library="python_methods">
+<doc>@brief:     This method checks to see if a pop up box has appeared and if it has, it accepts it. If it hasn't it
+            returns a -1</doc>
+<arguments>
+<arg>${Driver}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.291" endtime="20201001 21:47:18.296"></status>
+</kw>
+<doc>30/09/2020 Bahjat Murrad
+Accepting the cookies</doc>
+<status status="PASS" starttime="20201001 21:47:13.289" endtime="20201001 21:47:18.297" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Navigate_To_NAV">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${Test_Case_ID}</var>
+</assign>
+<msg timestamp="20201001 21:47:18.298" level="INFO">${Test_Case_ID} = 3</msg>
+<status status="PASS" starttime="20201001 21:47:18.298" endtime="20201001 21:47:18.298"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Running Test Case ${Test_Case_ID}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.298" endtime="20201001 21:47:18.299"></status>
+</kw>
+<kw name="Find Specific Css Selector And Click" library="python_methods">
+<doc>@brief:     This method finds the specific CSS selector and clicks it.</doc>
+<arguments>
+<arg>${Driver}</arg>
+<arg>"#gbwa &gt; div"</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.299" endtime="20201001 21:47:18.349"></status>
+</kw>
+<doc>01/10/2020 Bahjat Murrad
+Clicking on the dots</doc>
+<status status="PASS" starttime="20201001 21:47:18.297" endtime="20201001 21:47:18.349" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Navigate_To_Maps">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${Test_Case_ID}</var>
+</assign>
+<msg timestamp="20201001 21:47:18.352" level="INFO">${Test_Case_ID} = 4</msg>
+<status status="PASS" starttime="20201001 21:47:18.351" endtime="20201001 21:47:18.352"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Running Test Case ${Test_Case_ID}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.352" endtime="20201001 21:47:18.352"></status>
+</kw>
+<kw name="Switch To Frame Via Number" library="python_methods">
+<doc>@Brief:         This method switches the frame of the screen to the specified name
+                I haven't used a try and except</doc>
+<arguments>
+<arg>${Driver}</arg>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.353" endtime="20201001 21:47:18.525"></status>
+</kw>
+<kw name="Find Specific Css Selector And Click" library="python_methods">
+<doc>@brief:     This method finds the specific CSS selector and clicks it.</doc>
+<arguments>
+<arg>${Driver}</arg>
+<arg>"#yDmH0d &gt; c-wiz &gt; div &gt; div &gt; c-wiz &gt; div &gt; div &gt; ul.LVal7b.u4RcUd &gt; li:nth-child(3) &gt; a"</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.525" endtime="20201001 21:47:18.979"></status>
+</kw>
+<doc>01/10/2020 Bahjat Murrad
+Clicking on the maps icon</doc>
+<status status="PASS" starttime="20201001 21:47:18.351" endtime="20201001 21:47:18.980" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Navigate_To_Specific_Address">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${Test_Case_ID}</var>
+</assign>
+<msg timestamp="20201001 21:47:18.983" level="INFO">${Test_Case_ID} = 5</msg>
+<status status="PASS" starttime="20201001 21:47:18.982" endtime="20201001 21:47:18.983"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Running Test Case ${Test_Case_ID}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.983" endtime="20201001 21:47:18.984"></status>
+</kw>
+<kw name="Send Keys To Css Selector" library="python_methods">
+<doc>@brief:             This method sends keys to a selected css selector</doc>
+<arguments>
+<arg>${Driver}</arg>
+<arg>"#searchboxinput"</arg>
+<arg>"UB8 3PH"</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:18.984" endtime="20201001 21:47:20.176"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20201001 21:47:22.179" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201001 21:47:20.177" endtime="20201001 21:47:22.179"></status>
+</kw>
+<kw name="Find Specific Css Selector And Click" library="python_methods">
+<doc>@brief:     This method finds the specific CSS selector and clicks it.</doc>
+<arguments>
+<arg>${Driver}</arg>
+<arg>"#sbse0 &gt; div.sbqs_c &gt; div &gt; div &gt; div.suggest-left-cell"</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:22.179" endtime="20201001 21:47:22.296"></status>
+</kw>
+<doc>01/10/2020 Bahjat Murrad
+Entering the specific post code</doc>
+<status status="PASS" starttime="20201001 21:47:18.981" endtime="20201001 21:47:22.297" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Click_On_SLoop_Road">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>6</arg>
+</arguments>
+<assign>
+<var>${Test_Case_ID}</var>
+</assign>
+<msg timestamp="20201001 21:47:22.299" level="INFO">${Test_Case_ID} = 6</msg>
+<status status="PASS" starttime="20201001 21:47:22.299" endtime="20201001 21:47:22.299"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Running Test Case ${Test_Case_ID}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:22.300" endtime="20201001 21:47:22.300"></status>
+</kw>
+<kw name="YesOrNoQuestion">
+<doc>07/03/2019     Bahjat Murrad    Bahjat.murrad@bhge.com</doc>
+<arguments>
+<arg>Please click on the S Loop road and press the Yes or No button when completed</arg>
+</arguments>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<assign>
+<var>${Time}</var>
+</assign>
+<msg timestamp="20201001 21:47:22.301" level="INFO">${Time} = 2020-10-01 21:47:22</msg>
+<status status="PASS" starttime="20201001 21:47:22.301" endtime="20201001 21:47:22.301"></status>
+</kw>
+<kw name="Import Library" library="BuiltIn">
+<doc>Imports a library with the given name and optional arguments.</doc>
+<arguments>
+<arg>${EXECDIR}/Python_Methods/YesOrNoQuestion.py</arg>
+<arg>${Statement}</arg>
+<arg>WITH NAME</arg>
+<arg>${Time}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:22.301" endtime="20201001 21:47:22.306"></status>
+</kw>
+<kw name="Get Library Instance" library="BuiltIn">
+<doc>Returns the currently active instance of the specified test library.</doc>
+<arguments>
+<arg>${Time}</arg>
+</arguments>
+<assign>
+<var>${Temp_question}</var>
+</assign>
+<msg timestamp="20201001 21:47:22.307" level="INFO">${Temp_question} = &lt;YesOrNoQuestion.YesOrNoQuestion object at 0x03E4D050&gt;</msg>
+<status status="PASS" starttime="20201001 21:47:22.307" endtime="20201001 21:47:22.307"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${Temp_question}</arg>
+<arg>main_loop</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:22.307" endtime="20201001 21:47:34.930"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Temp_question.ans}</arg>
+</arguments>
+<assign>
+<var>${ans}</var>
+</assign>
+<msg timestamp="20201001 21:47:34.931" level="INFO">${ans} = Yes</msg>
+<status status="PASS" starttime="20201001 21:47:34.930" endtime="20201001 21:47:34.931"></status>
+</kw>
+<status status="PASS" starttime="20201001 21:47:22.300" endtime="20201001 21:47:34.931"></status>
+</kw>
+<kw name="Find Specific Css Selector And Click" library="python_methods">
+<doc>@brief:     This method finds the specific CSS selector and clicks it.</doc>
+<arguments>
+<arg>${Driver}</arg>
+<arg>"#reveal-card &gt; div &gt; button.widget-reveal-card-directions &gt; span"</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:34.932" endtime="20201001 21:47:35.001"></status>
+</kw>
+<doc>01/10/2020 Bahjat Murrad
+Asking the user to click on SLoop Road</doc>
+<tags>
+<tag>Manual</tag>
+</tags>
+<status status="PASS" starttime="20201001 21:47:22.298" endtime="20201001 21:47:35.002" critical="yes"></status>
+</test>
+<test id="s1-t7" name="Click_On_Second_Point">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>7</arg>
+</arguments>
+<assign>
+<var>${Test_Case_ID}</var>
+</assign>
+<msg timestamp="20201001 21:47:35.004" level="INFO">${Test_Case_ID} = 7</msg>
+<status status="PASS" starttime="20201001 21:47:35.004" endtime="20201001 21:47:35.004"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Running Test Case ${Test_Case_ID}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:35.004" endtime="20201001 21:47:35.005"></status>
+</kw>
+<kw name="YesOrNoQuestion">
+<doc>07/03/2019     Bahjat Murrad    Bahjat.murrad@bhge.com</doc>
+<arguments>
+<arg>Please click on the second point, once finished, press yes or no</arg>
+</arguments>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<assign>
+<var>${Time}</var>
+</assign>
+<msg timestamp="20201001 21:47:35.007" level="INFO">${Time} = 2020-10-01 21:47:35</msg>
+<status status="PASS" starttime="20201001 21:47:35.007" endtime="20201001 21:47:35.007"></status>
+</kw>
+<kw name="Import Library" library="BuiltIn">
+<doc>Imports a library with the given name and optional arguments.</doc>
+<arguments>
+<arg>${EXECDIR}/Python_Methods/YesOrNoQuestion.py</arg>
+<arg>${Statement}</arg>
+<arg>WITH NAME</arg>
+<arg>${Time}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:35.008" endtime="20201001 21:47:35.014"></status>
+</kw>
+<kw name="Get Library Instance" library="BuiltIn">
+<doc>Returns the currently active instance of the specified test library.</doc>
+<arguments>
+<arg>${Time}</arg>
+</arguments>
+<assign>
+<var>${Temp_question}</var>
+</assign>
+<msg timestamp="20201001 21:47:35.015" level="INFO">${Temp_question} = &lt;YesOrNoQuestion.YesOrNoQuestion object at 0x045B9E30&gt;</msg>
+<status status="PASS" starttime="20201001 21:47:35.014" endtime="20201001 21:47:35.015"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${Temp_question}</arg>
+<arg>main_loop</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:35.015" endtime="20201001 21:47:42.472"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Temp_question.ans}</arg>
+</arguments>
+<assign>
+<var>${ans}</var>
+</assign>
+<msg timestamp="20201001 21:47:42.472" level="INFO">${ans} = Yes</msg>
+<status status="PASS" starttime="20201001 21:47:42.472" endtime="20201001 21:47:42.472"></status>
+</kw>
+<status status="PASS" starttime="20201001 21:47:35.006" endtime="20201001 21:47:42.472"></status>
+</kw>
+<doc>01/10/2020 Bahjat Murrad
+Asking the user to click on the second point</doc>
+<tags>
+<tag>Manual</tag>
+</tags>
+<status status="PASS" starttime="20201001 21:47:35.003" endtime="20201001 21:47:42.473" critical="yes"></status>
+</test>
+<test id="s1-t8" name="Find_Distance_and_time">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>8</arg>
+</arguments>
+<assign>
+<var>${Test_Case_ID}</var>
+</assign>
+<msg timestamp="20201001 21:47:42.476" level="INFO">${Test_Case_ID} = 8</msg>
+<status status="PASS" starttime="20201001 21:47:42.476" endtime="20201001 21:47:42.476"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Running Test Case ${Test_Case_ID}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:42.477" endtime="20201001 21:47:42.478"></status>
+</kw>
+<kw name="Read Css Selector" library="python_methods">
+<doc>@brief:         This method reads the text that is stored in the css_selector</doc>
+<arguments>
+<arg>${Driver}</arg>
+<arg>"#section-directions-trip-0 &gt; div.section-directions-trip-description &gt; div:nth-child(3) &gt; div.section-directions-trip-numbers &gt; div.section-directions-trip-duration"</arg>
+</arguments>
+<assign>
+<var>${ans}</var>
+</assign>
+<msg timestamp="20201001 21:47:42.503" level="INFO">${ans} = 8 min</msg>
+<status status="PASS" starttime="20201001 21:47:42.483" endtime="20201001 21:47:42.503"></status>
+</kw>
+<kw name="YesOrNoQuestion">
+<doc>07/03/2019     Bahjat Murrad    Bahjat.murrad@bhge.com</doc>
+<arguments>
+<arg>Is the time shown on the screen ${ans}?</arg>
+</arguments>
+<assign>
+<var>${ans}</var>
+</assign>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<assign>
+<var>${Time}</var>
+</assign>
+<msg timestamp="20201001 21:47:42.505" level="INFO">${Time} = 2020-10-01 21:47:42</msg>
+<status status="PASS" starttime="20201001 21:47:42.504" endtime="20201001 21:47:42.505"></status>
+</kw>
+<kw name="Import Library" library="BuiltIn">
+<doc>Imports a library with the given name and optional arguments.</doc>
+<arguments>
+<arg>${EXECDIR}/Python_Methods/YesOrNoQuestion.py</arg>
+<arg>${Statement}</arg>
+<arg>WITH NAME</arg>
+<arg>${Time}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:42.505" endtime="20201001 21:47:42.508"></status>
+</kw>
+<kw name="Get Library Instance" library="BuiltIn">
+<doc>Returns the currently active instance of the specified test library.</doc>
+<arguments>
+<arg>${Time}</arg>
+</arguments>
+<assign>
+<var>${Temp_question}</var>
+</assign>
+<msg timestamp="20201001 21:47:42.509" level="INFO">${Temp_question} = &lt;YesOrNoQuestion.YesOrNoQuestion object at 0x045B9BD0&gt;</msg>
+<status status="PASS" starttime="20201001 21:47:42.508" endtime="20201001 21:47:42.509"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${Temp_question}</arg>
+<arg>main_loop</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:42.509" endtime="20201001 21:47:45.594"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Temp_question.ans}</arg>
+</arguments>
+<assign>
+<var>${ans}</var>
+</assign>
+<msg timestamp="20201001 21:47:45.595" level="INFO">${ans} = Yes</msg>
+<status status="PASS" starttime="20201001 21:47:45.594" endtime="20201001 21:47:45.595"></status>
+</kw>
+<msg timestamp="20201001 21:47:45.595" level="INFO">${ans} = Yes</msg>
+<status status="PASS" starttime="20201001 21:47:42.504" endtime="20201001 21:47:45.595"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${ans}</arg>
+<arg>Yes</arg>
+<arg>msg=Failed Test Case ${Test_Case_ID}, the correct time was not shown</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:45.596" endtime="20201001 21:47:45.596"></status>
+</kw>
+<kw name="Read Css Selector" library="python_methods">
+<doc>@brief:         This method reads the text that is stored in the css_selector</doc>
+<arguments>
+<arg>${Driver}</arg>
+<arg>"#section-directions-trip-0 &gt; div.section-directions-trip-description &gt; div:nth-child(3) &gt; div.section-directions-trip-numbers &gt; div.section-directions-trip-distance.section-directions-trip-secondary-text"</arg>
+</arguments>
+<assign>
+<var>${ans}</var>
+</assign>
+<msg timestamp="20201001 21:47:45.617" level="INFO">${ans} = 0.4 mile</msg>
+<status status="PASS" starttime="20201001 21:47:45.597" endtime="20201001 21:47:45.617"></status>
+</kw>
+<kw name="YesOrNoQuestion">
+<doc>07/03/2019     Bahjat Murrad    Bahjat.murrad@bhge.com</doc>
+<arguments>
+<arg>Is the distance shown on the screen ${ans}?</arg>
+</arguments>
+<assign>
+<var>${ans}</var>
+</assign>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<assign>
+<var>${Time}</var>
+</assign>
+<msg timestamp="20201001 21:47:45.618" level="INFO">${Time} = 2020-10-01 21:47:45</msg>
+<status status="PASS" starttime="20201001 21:47:45.618" endtime="20201001 21:47:45.618"></status>
+</kw>
+<kw name="Import Library" library="BuiltIn">
+<doc>Imports a library with the given name and optional arguments.</doc>
+<arguments>
+<arg>${EXECDIR}/Python_Methods/YesOrNoQuestion.py</arg>
+<arg>${Statement}</arg>
+<arg>WITH NAME</arg>
+<arg>${Time}</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:45.619" endtime="20201001 21:47:45.623"></status>
+</kw>
+<kw name="Get Library Instance" library="BuiltIn">
+<doc>Returns the currently active instance of the specified test library.</doc>
+<arguments>
+<arg>${Time}</arg>
+</arguments>
+<assign>
+<var>${Temp_question}</var>
+</assign>
+<msg timestamp="20201001 21:47:45.623" level="INFO">${Temp_question} = &lt;YesOrNoQuestion.YesOrNoQuestion object at 0x05930B70&gt;</msg>
+<status status="PASS" starttime="20201001 21:47:45.623" endtime="20201001 21:47:45.623"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${Temp_question}</arg>
+<arg>main_loop</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:45.623" endtime="20201001 21:47:48.442"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${Temp_question.ans}</arg>
+</arguments>
+<assign>
+<var>${ans}</var>
+</assign>
+<msg timestamp="20201001 21:47:48.442" level="INFO">${ans} = Yes</msg>
+<status status="PASS" starttime="20201001 21:47:48.442" endtime="20201001 21:47:48.442"></status>
+</kw>
+<msg timestamp="20201001 21:47:48.442" level="INFO">${ans} = Yes</msg>
+<status status="PASS" starttime="20201001 21:47:45.618" endtime="20201001 21:47:48.442"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${ans}</arg>
+<arg>Yes</arg>
+<arg>msg=Failed Test Case ${Test_Case_ID}, the correct distance was not shown</arg>
+</arguments>
+<status status="PASS" starttime="20201001 21:47:48.444" endtime="20201001 21:47:48.444"></status>
+</kw>
+<doc>01/10/2020 Bahjat Murrad
+Asking the user if the correct distance has been defined</doc>
+<status status="PASS" starttime="20201001 21:47:42.475" endtime="20201001 21:47:48.444" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201001 21:46:37.463" endtime="20201001 21:47:48.448"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0">Critical Tests</stat>
+<stat pass="8" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0">Manual</stat>
+</tag>
+<suite>
+<stat pass="8" fail="0" id="s1" name="Main">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
